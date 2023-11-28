@@ -80,10 +80,13 @@ const Demo = () => {
           {allArticles.map((item, index) => (
             <div
               key={`article-${index}`}
-              className="link_card"
+              className="link_card cursor-pointer"
               onClick={() => setArticle(item)}
             >
-              <div className="copy_btn" onClick={() => handleCopy(item.url)}>
+              <div
+                className="copy_btn cursor-pointer"
+                onClick={() => handleCopy(item.url)}
+              >
                 <img
                   src={copied === item.url ? tick : copy}
                   alt="copy_icon"
@@ -91,7 +94,7 @@ const Demo = () => {
                 />
               </div>
 
-              <p className="flex font-satoshi text-sm font-medium text-blue-700 truncate">
+              <p className="flex font-satoshi text-sm font-medium text-blue-700 truncate cursor-pointer">
                 {item.url}
               </p>
             </div>
